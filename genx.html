@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GenX Leadership Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Fraunces:ital,opsz,wght@1,9..144,500&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#0A0D12;--bone:#F2EBDD;--coral:#FF5436;--gold:#FFC24B;--steel:#7C8B98;--line:rgba(242,235,221,.14)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--ink);color:var(--bone);font-family:"Hanken Grotesk",system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow:hidden}
+  ::selection{background:var(--coral);color:var(--ink)}
+  a{color:inherit;text-decoration:none}
+  .eyebrow{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--coral);display:inline-flex;align-items:center;gap:12px}
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--coral)}
+  .it{font-family:"Fraunces",serif;font-style:italic;font-weight:500;background:linear-gradient(100deg,var(--coral),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  nav{position:fixed;inset:0 0 auto 0;z-index:60;display:flex;align-items:center;justify-content:space-between;padding:20px 30px}
+  .brand{display:flex;align-items:center;gap:11px;font-family:"Bricolage Grotesque";font-weight:800;font-size:21px;letter-spacing:-.02em}
+  .brand svg{width:26px;height:26px}
+  .ncta{font-family:"Space Mono";font-size:12px;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--bone);padding:10px 18px;border-radius:100px;transition:.25s}
+  .ncta:hover{background:var(--coral);border-color:var(--coral);color:var(--ink)}
+
+  .hero{position:relative;height:100svh;min-height:600px;overflow:hidden}
+  #field{position:absolute;inset:0;width:100%;height:100%;display:block}
+  .vig{position:absolute;inset:0;pointer-events:none;background:radial-gradient(120% 90% at 50% 36%,transparent 38%,rgba(10,13,18,.6) 100%)}
+  .hero-top{position:absolute;top:98px;left:0;right:0;text-align:center;z-index:5;pointer-events:none}
+  .hero-top .eyebrow{justify-content:center}
+  .hero-bottom{position:absolute;left:0;right:0;bottom:5vh;z-index:5;display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;max-width:1240px;margin:0 auto;padding:0 30px}
+  .hb-left{max-width:560px}
+  .hb-left h1{font-size:clamp(26px,3.3vw,40px);font-weight:500;line-height:1.14;margin-bottom:22px;letter-spacing:-.01em}
+  .btns{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:15px;padding:15px 26px;border-radius:100px;transition:.28s;cursor:pointer}
+  .btn-p{background:linear-gradient(100deg,var(--coral),var(--gold));color:var(--ink)}
+  .btn-p:hover{transform:translateY(-2px);box-shadow:0 18px 44px -14px rgba(255,120,60,.7)}
+  .btn-g{border:1px solid var(--line);color:var(--bone)}
+  .btn-g:hover{border-color:var(--bone);background:rgba(242,235,221,.05)}
+  .hb-right{text-align:right;color:var(--steel)}
+  .hb-right .hint{font-family:"Space Mono";font-size:11px;letter-spacing:.14em;text-transform:uppercase;line-height:1.9}
+  .dotpulse{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--coral);margin-right:7px;box-shadow:0 0 0 0 rgba(255,84,54,.6);animation:pl 2.4s infinite;vertical-align:middle}
+  @keyframes pl{0%{box-shadow:0 0 0 0 rgba(255,84,54,.5)}70%{box-shadow:0 0 0 11px rgba(255,84,54,0)}100%{box-shadow:0 0 0 0 transparent}}
+  @media(max-width:980px){.hb-right{display:none}}
+  #ring{position:fixed;width:46px;height:46px;border:1.5px solid rgba(255,194,75,.7);border-radius:50%;pointer-events:none;z-index:40;transform:translate(-50%,-50%);transition:width .2s,height .2s,opacity .3s;mix-blend-mode:screen;opacity:0}
+  @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div id="ring"></div>
+
+<nav>
+  <a class="brand" href="#"><svg viewBox="0 0 40 40" fill="none"><path d="M8 8 32 32M32 8 8 32" stroke="url(#g)" stroke-width="6" stroke-linecap="round"/><defs><linearGradient id="g" x1="0" y1="0" x2="40" y2="40"><stop stop-color="#FF5436"/><stop offset="1" stop-color="#FFC24B"/></linearGradient></defs></svg>GenX</a>
+  <a class="ncta" href="#">Start Now</a>
+</nav>
+
+<header class="hero" id="top">
+  <canvas id="field"></canvas>
+  <div class="vig"></div>
+  <div class="hero-top"><span class="eyebrow">GenX Leadership Academy Â· Executive Coaching &amp; Leadership Training</span></div>
+  <div class="hero-bottom">
+    <div class="hb-left">
+      <h1>Where scientific rigor meets the force that turns uncertainty into your <span class="it">breakthrough</span>.</h1>
+      <div class="btns">
+        <a class="btn btn-p" href="#">Work with Sara â</a>
+        <a class="btn btn-g" href="#">Train your organisation</a>
+      </div>
+    </div>
+    <div class="hb-right">
+      <div class="hint"><span class="dotpulse"></span>Move to disturb the field</div>
+      <div class="hint">Click to detonate &amp; reform</div>
+    </div>
+  </div>
+</header>
+
+<script>
+const ring=document.getElementById('ring'),hero=document.querySelector('.hero');
+hero.addEventListener('mouseenter',()=>ring.style.opacity=1);
+hero.addEventListener('mouseleave',()=>ring.style.opacity=0);
+addEventListener('mousemove',e=>{ring.style.left=e.clientX+'px';ring.style.top=e.clientY+'px';});
+hero.addEventListener('mousedown',()=>{ring.style.width='24px';ring.style.height='24px';});
+addEventListener('mouseup',()=>{ring.style.width='46px';ring.style.height='46px';});
+
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const cv=document.getElementById('field'),ctx=cv.getContext('2d');
+let W,H,dpr,oc,octx,parts=[],mouse={x:-9999,y:-9999,down:false},N,shapeI=0;
+const SH=['x','GenX','BREAK','THROUGH'],coral=[255,84,54],gold=[255,194,75];
+function size(){dpr=Math.min(devicePixelRatio||1,2);W=hero.clientWidth;H=hero.clientHeight;
+  cv.width=W*dpr;cv.height=H*dpr;cv.style.width=W+'px';cv.style.height=H+'px';ctx.setTransform(dpr,0,0,dpr,0,0);
+  oc=document.createElement('canvas');oc.width=W;oc.height=H;octx=oc.getContext('2d',{willReadFrequently:true});
+  N=Math.floor(Math.min(3400,(W*H)/720));if(W<700)N=Math.floor(N*0.55);}
+function drawX(c){const s=Math.min(W,H)*0.30,cx=W/2,cy=H*0.46,t=Math.min(W,H)*0.07;
+  c.strokeStyle='#fff';c.lineWidth=t;c.lineCap='round';c.beginPath();
+  c.moveTo(cx-s,cy-s);c.lineTo(cx+s,cy+s);c.moveTo(cx+s,cy-s);c.lineTo(cx-s,cy+s);c.stroke();}
+function drawText(c,txt){c.fillStyle='#fff';c.textAlign='center';c.textBaseline='middle';
+  let fs=H*0.5;c.font=`800 ${fs}px "Bricolage Grotesque",sans-serif`;
+  const tw=c.measureText(txt).width;fs=Math.min(fs*(W*0.82)/tw,H*0.58);
+  c.font=`800 ${fs}px "Bricolage Grotesque",sans-serif`;c.fillText(txt,W/2,H*0.46);}
+function shapePoints(name){octx.clearRect(0,0,W,H);name==='x'?drawX(octx):drawText(octx,name);
+  const d=octx.getImageData(0,0,W,H).data,pts=[],step=5;
+  for(let y=0;y<H;y+=step)for(let x=0;x<W;x+=step)if(d[(y*W+x)*4+3]>130)pts.push([x,y]);
+  for(let i=pts.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[pts[i],pts[j]]=[pts[j],pts[i]];}return pts;}
+function lerp(a,b,t){return a+(b-a)*t;}
+function colorFor(x){const t=Math.max(0,Math.min(1,(x/W-0.2)/0.6));
+  return[Math.round(lerp(coral[0],gold[0],t)),Math.round(lerp(coral[1],gold[1],t)),Math.round(lerp(coral[2],gold[2],t))];}
+function setShape(name){const pts=shapePoints(name);
+  if(!parts.length){for(let i=0;i<N;i++){const p=pts[i%pts.length];
+    parts.push({x:Math.random()*W,y:Math.random()*H,vx:0,vy:0,hx:p[0],hy:p[1],seed:Math.random()*6.28,r:0,g:0,b:0});}}
+  else{for(let i=0;i<N;i++){const p=pts[i%pts.length];parts[i].hx=p[0];parts[i].hy=p[1];}}
+  parts.forEach(p=>{const c=colorFor(p.hx);p.r=c[0];p.g=c[1];p.b=c[2];});}
+function frame(t){ctx.clearRect(0,0,W,H);ctx.globalCompositeOperation='lighter';const R=140,R2=R*R;
+  for(let i=0;i<N;i++){const p=parts[i];
+    p.vx+=(p.hx-p.x)*0.014;p.vy+=(p.hy-p.y)*0.014;
+    if(!reduce){const dx=p.x-mouse.x,dy=p.y-mouse.y,d2=dx*dx+dy*dy;
+      if(d2<R2){const d=Math.sqrt(d2)||1,f=(1-d/R)*(mouse.down?9:5.2);p.vx+=dx/d*f;p.vy+=dy/d*f;}
+      p.vx+=Math.cos(t*0.0006+p.seed)*0.06;p.vy+=Math.sin(t*0.0006+p.seed*1.7)*0.06;}
+    p.vx*=0.86;p.vy*=0.86;p.x+=p.vx;p.y+=p.vy;
+    const sp=Math.min((Math.abs(p.vx)+Math.abs(p.vy))*0.08,0.5);
+    ctx.fillStyle=`rgba(${Math.min(255,p.r+sp*200)},${Math.min(255,p.g+sp*200)},${Math.min(255,p.b+sp*160)},0.82)`;
+    ctx.fillRect(p.x,p.y,1.7,1.7);}
+  ctx.globalCompositeOperation='source-over';requestAnimationFrame(frame);}
+function detonate(){parts.forEach(p=>{const a=Math.random()*6.28,f=8+Math.random()*16;p.vx+=Math.cos(a)*f;p.vy+=Math.sin(a)*f;});}
+hero.addEventListener('mousedown',()=>{mouse.down=true;detonate();});addEventListener('mouseup',()=>mouse.down=false);
+hero.addEventListener('mousemove',e=>{const r=cv.getBoundingClientRect();mouse.x=e.clientX-r.left;mouse.y=e.clientY-r.top;});
+hero.addEventListener('mouseleave',()=>{mouse.x=mouse.y=-9999;});
+hero.addEventListener('touchmove',e=>{const r=cv.getBoundingClientRect(),tc=e.touches[0];mouse.x=tc.clientX-r.left;mouse.y=tc.clientY-r.top;},{passive:true});
+hero.addEventListener('touchend',()=>{mouse.x=mouse.y=-9999;});
+function nextShape(){const L=W<700?['x','GenX']:SH;shapeI=(shapeI+1)%L.length;setShape(L[shapeI]);}
+function start(){size();setShape('x');if(!reduce){detonate();setInterval(nextShape,5200);}requestAnimationFrame(frame);}
+let rt;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>{const cur=(W<700?['x','GenX']:SH)[shapeI]||'x';size();setShape(cur);},250);});
+document.fonts.ready.then(start);
+</script>
+</body>
+</html>
